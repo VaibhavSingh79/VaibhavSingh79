@@ -7,7 +7,7 @@
 
 <p align="left"> <a href="https://twitter.com/" target="blank"><img src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
 
-- 🌱 I’m currently learning **Golang and DSA(with CPP)**
+- 🌱 I’m currently learning more about **Cloud Computing and DSA(with CPP)**
 
 - 💬 Ask me about **Java, HLF, Cloud computing**
 
