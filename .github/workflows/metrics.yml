@@ -1,0 +1,76 @@
+
+
+name: Generate Profile Metrics
+
+on:
+  schedule:
+    # Every 12 hours. Times are UTC — this is ~05:30 and ~17:30 IST.
+    - cron: "0 0,12 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  # ---------------------------------------------------------------
+  # 1. Overview card — repos, stars, followers, language breakdown
+  # ---------------------------------------------------------------
+  overview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Overview + languages
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: VaibhavSingh79
+          filename: github-metrics.svg
+          template: classic
+          base: header, repositories
+          config_timezone: Asia/Kolkata
+          config_theme: dark
+          plugin_languages: yes
+          plugin_languages_details: percentage
+          plugin_languages_limit: 8
+          plugin_languages_sections: most-used
+
+  # ---------------------------------------------------------------
+  # 2. Contribution calendar — includes current streak
+  # ---------------------------------------------------------------
+  calendar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Isometric contribution calendar
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: VaibhavSingh79
+          filename: github-calendar.svg
+          base: ""
+          config_timezone: Asia/Kolkata
+          config_theme: dark
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+  # ---------------------------------------------------------------
+  # 3. Habits — busiest hours and days. Proves the night-owl claim.
+  # ---------------------------------------------------------------
+  habits:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coding habits
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: VaibhavSingh79
+          filename: github-habits.svg
+          base: ""
+          config_timezone: Asia/Kolkata
+          config_theme: dark
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
