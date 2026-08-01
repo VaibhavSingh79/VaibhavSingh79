@@ -14,7 +14,7 @@
 <a href="mailto:vaibhavsingh8829@gmail.com">
   <img src="https://img.shields.io/badge/Email-1A3A5C?style=for-the-badge&logo=gmail&logoColor=E85D26&labelColor=0A2540" alt="Email" />
 </a>
-<a href="https://leetcode.com/u/YOUR_LEETCODE_HANDLE/">
+<a href="https://leetcode.com/u/VaibhavSingh79/">
   <img src="https://img.shields.io/badge/LeetCode-1A3A5C?style=for-the-badge&logo=leetcode&logoColor=FFA116&labelColor=0A2540" alt="LeetCode" />
 </a>
 <a href="https://stackoverflow.com/users/17320810/vaibhav-singh">
